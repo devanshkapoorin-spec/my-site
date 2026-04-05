@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 56" fill="none">
+  <title>Devansh Kapoor — Typographic Logo</title>
+
+  <!-- First name: large serif, tight tracking -->
+  <text x="0" y="38" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="700" fill="#1a1814" letter-spacing="-1.5">DEVANSH</text>
+
+  <!-- Last name: italic, gold, slightly smaller, offset right -->
+  <text x="4" y="54" font-family="Georgia, 'Times New Roman', serif" font-size="15" font-weight="400" font-style="italic" fill="#8b6914" letter-spacing="6">Kapoor</text>
+
+  <!-- Accent line under DEVANSH — matches last name width -->
+  <line x1="0" y1="43" x2="218" y2="43" stroke="#8b6914" stroke-width="1.5"/>
+
+  <!-- Small descriptor -->
+  <text x="222" y="43" font-family="'Inter', system-ui, sans-serif" font-size="9" font-weight="600" fill="#9c9890" letter-spacing="2">ECON · DATA</text>
+</svg>

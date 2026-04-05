@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Logo Showcase — Devansh Kapoor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: #f0ede6;
+      color: #1a1814;
+      -webkit-font-smoothing: antialiased;
+      padding: 48px 24px;
+      min-height: 100vh;
+    }
+
+    h1 {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #9c9890;
+      margin-bottom: 48px;
+    }
+
+    .logo-section {
+      margin-bottom: 64px;
+    }
+
+    .logo-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #8b6914;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: #e0dbd0;
+    }
+
+    .logo-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      max-width: 900px;
+    }
+
+    .logo-panel {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 56px 48px;
+      position: relative;
+    }
+
+    .logo-panel.light { background: #ffffff; }
+    .logo-panel.cream { background: #f5f2eb; }
+    .logo-panel.dark  { background: #1a1814; }
+    .logo-panel.black { background: #0a0a0a; }
+
+    .panel-label {
+      position: absolute;
+      top: 14px;
+      left: 18px;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      opacity: 0.35;
+    }
+
+    .logo-panel.light .panel-label,
+    .logo-panel.cream .panel-label { color: #1a1814; }
+
+    .logo-panel.dark .panel-label,
+    .logo-panel.black .panel-label { color: #ffffff; }
+
+    /* Invert SVG colors for dark backgrounds */
+    .logo-panel.dark  img,
+    .logo-panel.black img {
+      filter: invert(1) sepia(1) saturate(1.5) hue-rotate(345deg) brightness(1.1);
+    }
+
+    img { display: block; max-width: 100%; height: auto; }
+
+    .divider {
+      border: none;
+      border-top: 1px solid #e0dbd0;
+      margin: 64px 0;
+      max-width: 900px;
+    }
+
+    /* Dark bg logo needs different treatment — gold stays gold, text becomes white */
+    /* We'll do this with CSS filter approximation */
+    .dark-logo {
+      filter: brightness(0) invert(1);
+    }
+
+    /* Better approach: separate SVG color notes */
+    .note {
+      max-width: 900px;
+      margin-top: 12px;
+      font-size: 12px;
+      color: #9c9890;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Logo Showcase — Devansh Kapoor</h1>
+
+  <!-- Logo V1 -->
+  <div class="logo-section">
+    <div class="logo-label">Logo 1 — Mark + Wordmark</div>
+    <div class="logo-grid">
+      <div class="logo-panel light">
+        <span class="panel-label">White</span>
+        <img src="logo-v1.svg" alt="Logo V1 on white" width="220" />
+      </div>
+      <div class="logo-panel cream">
+        <span class="panel-label">Cream (site bg)</span>
+        <img src="logo-v1.svg" alt="Logo V1 on cream" width="220" />
+      </div>
+      <div class="logo-panel dark">
+        <span class="panel-label">Dark</span>
+        <img src="logo-v1.svg" alt="Logo V1 on dark" width="220" class="dark-logo" />
+      </div>
+      <div class="logo-panel black">
+        <span class="panel-label">Black</span>
+        <img src="logo-v1.svg" alt="Logo V1 on black" width="220" class="dark-logo" />
+      </div>
+    </div>
+    <p class="note">Mark + wordmark — use in nav, headers, email signatures. The DK monogram works as a standalone favicon or social avatar.</p>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- Logo V2 -->
+  <div class="logo-section">
+    <div class="logo-label">Logo 2 — Typographic Only</div>
+    <div class="logo-grid">
+      <div class="logo-panel light">
+        <span class="panel-label">White</span>
+        <img src="logo-v2.svg" alt="Logo V2 on white" width="260" />
+      </div>
+      <div class="logo-panel cream">
+        <span class="panel-label">Cream (site bg)</span>
+        <img src="logo-v2.svg" alt="Logo V2 on cream" width="260" />
+      </div>
+      <div class="logo-panel dark">
+        <span class="panel-label">Dark</span>
+        <img src="logo-v2.svg" alt="Logo V2 on dark" width="260" class="dark-logo" />
+      </div>
+      <div class="logo-panel black">
+        <span class="panel-label">Black</span>
+        <img src="logo-v2.svg" alt="Logo V2 on black" width="260" class="dark-logo" />
+      </div>
+    </div>
+    <p class="note">Typographic logo — use on portfolio headers, resume headers, printed materials. The stacked DEVANSH / <em>Kapoor</em> creates strong visual hierarchy without needing an icon.</p>
+  </div>
+
+</body>
+</html>

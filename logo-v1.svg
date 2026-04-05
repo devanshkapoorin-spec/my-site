@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 56" fill="none">
+  <title>Devansh Kapoor — Mark + Wordmark</title>
+
+  <!-- Mark: DK monogram in a geometric square frame -->
+  <rect x="0" y="4" width="48" height="48" rx="0" stroke="#8b6914" stroke-width="1.5" fill="none"/>
+  <!-- D shape -->
+  <text x="5" y="37" font-family="Georgia, serif" font-size="28" font-weight="700" fill="#8b6914" letter-spacing="-2">DK</text>
+  <!-- Corner accent dots -->
+  <rect x="0" y="4" width="5" height="5" fill="#8b6914"/>
+  <rect x="43" y="47" width="5" height="5" fill="#8b6914"/>
+
+  <!-- Wordmark -->
+  <text x="62" y="27" font-family="Georgia, 'Times New Roman', serif" font-size="18" font-weight="700" fill="#1a1814" letter-spacing="-0.5">Devansh</text>
+  <text x="62" y="47" font-family="Georgia, 'Times New Roman', serif" font-size="18" font-weight="400" font-style="italic" fill="#8b6914" letter-spacing="-0.5">Kapoor</text>
+
+  <!-- Thin divider line between names -->
+  <line x1="62" y1="31" x2="175" y2="31" stroke="#e0dbd0" stroke-width="1"/>
+</svg>
