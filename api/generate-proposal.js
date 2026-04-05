@@ -270,7 +270,7 @@ async function sendEmail({ to, subject, body, attach_pdf }) {
     text: body,
   };
 
-  if (attach_pdf && proposalPdfBase64) {
+  if (proposalPdfBase64) {
     payload.attachments = [{
       filename: 'proposal.pdf',
       content: proposalPdfBase64,
