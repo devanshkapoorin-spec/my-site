@@ -81,8 +81,8 @@
         </p>
 
         <div class="hero-ctas fade-up">
-          <a href="#contact" class="btn-primary">Let's work together</a>
-          <a href="#services" class="btn-secondary">See the work</a>
+          <a href="#projects" class="btn-primary">See my work</a>
+          <a href="#contact" class="btn-secondary">Get in touch</a>
           <!-- Drop Devansh_Kapoor_CV.pdf into my-site/ to activate this link -->
           <a href="./Devansh_Kapoor_CV.pdf" download class="btn-text">
             Download CV ↓
@@ -203,12 +203,12 @@
   <!-- ── Services ── -->
   <section id="services">
     <div class="wrap">
-      <p class="s-label fade-up">What I Bring</p>
-      <h2 class="s-title fade-up">Three capabilities.<br>Each one built in the field, not the classroom.</h2>
+      <p class="s-label fade-up">What I Do</p>
+      <h2 class="s-title fade-up">Three capabilities.<br>Each built in the field, not the classroom.</h2>
       <p class="s-intro fade-up">
-        At every stop — Jakarta, New Delhi, Boston — the work required building something
+        At every stop, Jakarta, New Delhi, Boston, the work required building something
         from scratch, not inheriting a process. Here is what I've built, and what I bring
-        to a team.
+        to any team.
       </p>
 
       <div class="credibility-strip fade-up">
@@ -531,7 +531,7 @@
   <!-- ── Footer ── -->
   <footer>
     <div class="footer-inner">
-      <span class="footer-copy">Devansh Rohit Kapoor &mdash; Boston, MA &middot; Gurugram, India</span>
+      <span class="footer-copy">Devansh Rohit Kapoor &middot; Boston, MA &middot; Gurugram, India</span>
       <div class="footer-links">
         <a href="mailto:devanshkapoor.in@gmail.com">Email</a>
         <a href="https://linkedin.com/in/devansh-kapoor-2b444b213" target="_blank" rel="noopener noreferrer">LinkedIn</a>
@@ -902,7 +902,6 @@
             progressFill.style.width = '100%';
             progressLabel.textContent = 'Complete';
             freezeInput();
-            // Fire proposal to backend (best-effort)
             fetch('/api/generate-proposal', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
@@ -921,6 +920,7 @@
       sendBtn.addEventListener('click', sendAnswer);
       inputEl.addEventListener('keydown', (e) => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendAnswer(); } });
     })();
+
   </script>
 
 </body>

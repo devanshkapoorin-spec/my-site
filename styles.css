@@ -1,6 +1,6 @@
 /* ==========================================================================
    styles.css — Devansh Kapoor Portfolio
-   Design: Editorial Light
+   Design: Editorial · Dark Hero
    ========================================================================== */
 
 /* ── 1. Design Tokens ────────────────────────────────────────────────────── */
@@ -103,7 +103,6 @@ section {
 }
 
 /* ── 5. Buttons ──────────────────────────────────────────────────────────── */
-/* Text-style download link used in hero CTAs */
 .btn-text {
   display: inline-flex;
   align-items: center;
@@ -119,7 +118,6 @@ section {
 }
 
 .btn-text:hover { color: var(--accent); border-color: var(--accent); }
-
 
 .btn-primary {
   display: inline-block;
@@ -162,6 +160,35 @@ section {
   color: var(--text);
   border-color: var(--text-2);
   transform: translateY(-2px);
+}
+
+/* Hero-specific button overrides (dark background) */
+.hero-ctas .btn-primary {
+  background: #c9a84c;
+  color: #0c1221;
+  border-color: #c9a84c;
+}
+.hero-ctas .btn-primary:hover {
+  background: transparent;
+  color: #c9a84c;
+  box-shadow: 0 8px 28px rgba(201, 168, 76, 0.25);
+}
+.hero-ctas .btn-secondary {
+  color: rgba(245, 242, 235, 0.7);
+  border-color: rgba(245, 242, 235, 0.22);
+}
+.hero-ctas .btn-secondary:hover {
+  color: #f5f2eb;
+  border-color: rgba(245, 242, 235, 0.5);
+  transform: translateY(-2px);
+}
+.hero-ctas .btn-text {
+  color: rgba(245, 242, 235, 0.42);
+  border-bottom-color: rgba(245, 242, 235, 0.15);
+}
+.hero-ctas .btn-text:hover {
+  color: #c9a84c;
+  border-bottom-color: #c9a84c;
 }
 
 /* ── 6. Nav ──────────────────────────────────────────────────────────────── */
@@ -228,6 +255,14 @@ section {
 .nav-links a:hover { color: var(--text); }
 .nav-links a:hover::after { transform: scaleX(1); }
 
+/* Nav over dark hero */
+#nav:not(.scrolled) .nav-links a { color: rgba(245, 242, 235, 0.62); }
+#nav:not(.scrolled) .nav-links a:hover { color: #f5f2eb; }
+#nav:not(.scrolled) .nav-links a::after { background: #c9a84c; }
+#nav:not(.scrolled) .nav-hamburger span { background: rgba(245, 242, 235, 0.7); }
+#nav:not(.scrolled) .nav-logo svg text:nth-of-type(2) { fill: #f5f2eb; }
+#nav:not(.scrolled) .nav-logo svg line { stroke: rgba(245, 242, 235, 0.18); }
+
 /* Hamburger */
 .nav-hamburger {
   display: none;
@@ -284,6 +319,11 @@ section {
 .nav-mobile a:hover { color: var(--accent); }
 
 /* ── 7. Hero ─────────────────────────────────────────────────────────────── */
+@keyframes hero-gradient-shift {
+  0%, 100% { background-position: 0% 0%; }
+  50%       { background-position: 100% 100%; }
+}
+
 #hero {
   min-height: 100svh;
   display: flex;
@@ -292,15 +332,26 @@ section {
   border-top: none;
   position: relative;
   overflow: hidden;
+  background: linear-gradient(
+    160deg,
+    #0c1221 0%,
+    #0f1c30 40%,
+    #121e35 70%,
+    #0a1428 100%
+  );
+  background-size: 200% 200%;
+  animation: hero-gradient-shift 20s ease infinite;
 }
 
-/* Dot-grid background */
+/* Dot-grid + ambient gold glow */
 #hero::before {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(circle, rgba(139, 105, 20, 0.13) 1px, transparent 1px);
-  background-size: 28px 28px;
+  background-image:
+    radial-gradient(ellipse 800px 600px at 80% 30%, rgba(201, 168, 76, 0.08) 0%, transparent 65%),
+    radial-gradient(circle, rgba(201, 168, 76, 0.15) 1px, transparent 1px);
+  background-size: auto, 28px 28px;
   pointer-events: none;
   z-index: 0;
 }
@@ -315,7 +366,7 @@ section {
   font-size: clamp(80px, 16vw, 180px);
   font-weight: 700;
   font-style: italic;
-  color: rgba(139, 105, 20, 0.04);
+  color: rgba(201, 168, 76, 0.045);
   line-height: 1;
   pointer-events: none;
   user-select: none;
@@ -330,16 +381,17 @@ section {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: var(--surface);
-  border: 1px solid var(--border-2);
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.13);
   padding: 8px 18px;
   border-radius: 100px;
   font-size: 12px;
   font-weight: 600;
-  color: var(--text-2);
+  color: rgba(245, 242, 235, 0.75);
   margin-bottom: 32px;
   letter-spacing: 0.02em;
-  box-shadow: 0 2px 8px rgba(26, 24, 20, 0.06);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 .badge-dot {
@@ -362,7 +414,7 @@ section {
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: #c9a84c;
   margin-bottom: 24px;
 }
 
@@ -371,19 +423,19 @@ section {
   font-size: clamp(42px, 7vw, 80px);
   line-height: 1.06;
   letter-spacing: -0.03em;
-  color: var(--text);
+  color: #f5f2eb;
   margin-bottom: 32px;
   max-width: 760px;
 }
 
 .hero-h1 em {
   font-style: italic;
-  color: var(--accent);
+  color: #c9a84c;
 }
 
 .hero-sub {
   font-size: 17px;
-  color: var(--text-2);
+  color: rgba(245, 242, 235, 0.62);
   line-height: 1.8;
   max-width: 580px;
   margin-bottom: 44px;
@@ -400,13 +452,13 @@ section {
 .hero-stats {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  border-top: 1px solid var(--border-2);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
   padding-top: 44px;
 }
 
 .stat-item {
   padding: 0 28px;
-  border-right: 1px solid var(--border);
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .stat-item:first-child { padding-left: 0; }
@@ -416,7 +468,7 @@ section {
   font-family: var(--serif);
   font-size: 32px;
   font-weight: 700;
-  color: var(--accent);
+  color: #c9a84c;
   line-height: 1;
   letter-spacing: -0.02em;
   margin-bottom: 8px;
@@ -424,7 +476,7 @@ section {
 
 .stat-label {
   font-size: 12px;
-  color: var(--text-3);
+  color: rgba(245, 242, 235, 0.48);
   line-height: 1.5;
 }
 
@@ -1103,7 +1155,7 @@ footer {
 
   .stat-item { padding: 0; border-right: none; }
   .stat-item:nth-child(odd)  { padding-right: 16px; }
-  .stat-item:nth-child(even) { padding-left: 16px; border-left: 1px solid var(--border); }
+  .stat-item:nth-child(even) { padding-left: 16px; border-left: 1px solid rgba(255, 255, 255, 0.08); }
 
   .edu-strip { flex-direction: column; align-items: flex-start; }
   .form-row  { grid-template-columns: 1fr; }
@@ -1119,7 +1171,7 @@ footer {
 }
 
 /* ==========================================================================
-   Widgets (Chat + Proposal)
+   Chat Widget
    ========================================================================== */
 
 #widgets-root {
@@ -1148,7 +1200,7 @@ footer {
   transform: translateY(8px);
 }
 
-/* ── Toggle buttons ── */
+/* ── Toggle button ── */
 .cw-toggle {
   display: inline-flex;
   align-items: center;
@@ -1192,7 +1244,7 @@ footer {
   display: flex;
   align-items: center;
   flex-shrink: 0;
-  color: var(--gold, #c9a84c);
+  color: #c9a84c;
   transition: transform 0.3s var(--ease);
 }
 
@@ -1201,7 +1253,7 @@ footer {
 
 .cw-toggle-label { white-space: nowrap; }
 
-/* ── Chat / Proposal windows (shared) ── */
+/* ── Chat window ── */
 .cw-window {
   width: 360px;
   max-height: 520px;
@@ -1213,7 +1265,6 @@ footer {
   flex-direction: column;
   overflow: hidden;
 
-  /* Hidden by default */
   opacity: 0;
   transform: translateY(12px) scale(0.97);
   pointer-events: none;
